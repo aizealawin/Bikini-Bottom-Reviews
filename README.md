@@ -41,9 +41,9 @@ This site is focused around reviewing the direct menu items from a restaurant, a
 - Node.js
 - JavaScript
 
-#### **_Entity Relationship Diagram:_**
+#### **_Component Heirarchy Diagram:_**
 
-![Entity Relationship Diagram](https://i.imgur.com/ECoO9QA.jpeg 'Entity Relationship Diagram')
+![Component Heirarchy Diagram](https://i.imgur.com/kQuoIKD.jpeg 'Component Heirarchy Diagram')
 
 ### **_Planning_**
 
