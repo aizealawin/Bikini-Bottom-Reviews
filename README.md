@@ -43,7 +43,7 @@ This site is focused around reviewing the direct menu items from a restaurant, a
 
 #### **_Entity Relationship Diagram:_**
 
-![Entity Relationship Diagram](https://imgur.com/ECoO9QA 'Entity Relationship Diagram')
+![Entity Relationship Diagram](https://i.imgur.com/ECoO9QA.jpeg 'Entity Relationship Diagram')
 
 ### **_Planning_**
 
