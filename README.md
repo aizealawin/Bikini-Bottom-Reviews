@@ -18,7 +18,7 @@
 
 ### **_Resources_**
 
-[Frontend Repo](https://github.com/thomalita/bikini-bottom-reviews)
+[Backend Repo](https://github.com/thomalita/bikini-bottom-reviews)
 
 [Deployed Site](https://google.com)
 
