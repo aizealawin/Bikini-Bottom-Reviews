@@ -36,10 +36,11 @@ This site is focused around reviewing the direct menu items from a restaurant, a
 
 #### Pern Stack
 
-- PostgreSQL + Sequelize
-- Express.js
+- React
+- HTML
 - Node.js
 - JavaScript
+- CSS
 
 #### **_Component Heirarchy Diagram:_**
 
