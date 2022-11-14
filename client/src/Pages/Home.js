@@ -19,9 +19,11 @@ const Home = () => {
   }, [])
 
   return (
+    <body className="homepage">
     <div>
       <div>
         <h2>Welcome to Bikini Bottom Reviews</h2>
+        {/* <iframe src="https://giphy.com/embed/3o6wNLivQ7MkX2BIQw" width="480" height="360" frameBorder="0" allowFullScreen></iframe> */}
       </div>
       <h4>Here are our world class restaurants!</h4>
       <div className="container-grid">
@@ -32,6 +34,7 @@ const Home = () => {
         ))}
       </div>
     </div>
+    </body>
   )
 }
 
