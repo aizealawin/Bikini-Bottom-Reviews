@@ -1,21 +1,44 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, Navigate } from 'react-router-dom'
+import { SignInUser } from '../services/auth'
 
-const Login = () => {
+const Login = ({ setUser, toggleAuthenticated }) => {
+  const [formValues, setFormValues] = useState({ email: '', password: '' })
+  const handleChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
+  }
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const payload = await SignInUser(formValues)
+    setFormValues({ email: '', password: '' })
+    setUser(payload)
+    toggleAuthenticated(true)
+    Navigate('/')
+  }
   return (
     <div className="form">
       <h1>Login to submit review</h1>
       <div className="form">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="input-container">
             <label>Username </label>
-            <input type="text" name="username" required />
+            <input
+              type="text"
+              onChange={handleChange}
+              name="username"
+              required
+            />
             {/* {renderErrorMessage("uname")} */}
           </div>
           <div className="input-container">
             <label>Password </label>
-            <input type="password" name="password" required />
+            <input
+              type="password"
+              onChange={handleChange}
+              name="password"
+              required
+            />
             {/* {renderErrorMessage("pass")} */}
           </div>
           <div className="button-container">
