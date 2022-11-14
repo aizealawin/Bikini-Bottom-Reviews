@@ -25,7 +25,7 @@ const Home = () => {
       <h4>Here are our premiere restaurants!</h4>
       <div className="container-grid">
         {restaurants.map((result) => (
-          <Link to={`/restaurant/${result.id}`} key={result.id}>
+          <Link to={`/${result.id}`} key={result.id}>
             {console.log(result.id)}
             <RestaurantCard name={result.name} />
           </Link>
