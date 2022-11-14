@@ -6,7 +6,6 @@ const Restaurant = () => {
     const [restaurants, updateRestaurants] = useState([])
     const [reviews, updateReviews] = useState([])
     const { restaurantId } = useParams()
-    console.log(restaurantId)
 
     useEffect(() => {
         const api = async () => {
@@ -24,7 +23,6 @@ const Restaurant = () => {
         }
         api()
     }, [])
-    console.log(reviews)
 
 
     const [users, updateUsers] = useState([])
@@ -35,14 +33,13 @@ const Restaurant = () => {
         }
         api()
     }, [])
-    console.log(users)
 
 
     return (
         <div>
             {restaurants.map((res) => {
                 return (
-                    <div className='image'>
+                    <div className='image' key={res.id}>
                         <img src={res.image}/>
                             <h1>{res.name}</h1>
                         <div className='menu'>
@@ -55,7 +52,7 @@ const Restaurant = () => {
                                 for (let i =0; i < users.length; i++) {
                                     if (users[i].id === res.userId) {
                                         return (
-                                            <div>
+                                            <div className="userReview" key={res.id}>
                                             <h5>{users[i].username}</h5>
                                             <img src={users[i].profilePic} className="pfp"/>
                                             <p>{res.content}</p>
