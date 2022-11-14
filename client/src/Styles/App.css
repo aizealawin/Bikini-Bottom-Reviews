@@ -13,13 +13,16 @@
 }
 
 img {
-  width: 100px;
-  height: 100px;
+  width: 275px;
+  height: 275px;
+  border: solid 10px white; 
+  border-radius: 10%;
 }
 
 nav {
   display: flex;
   justify-content: space-evenly;
+  background-color: salmon;
 }
 
 .homepage {
@@ -27,6 +30,13 @@ nav {
   background-color: #89CFF0;
   height: 100vh;
   object-fit: fill;
+  margin: 0;
+  padding: 35px;
+}
+
+#home {
+  text-shadow: 0 0 15px white;
+  font-size: 40px;
 }
 
 .menu{

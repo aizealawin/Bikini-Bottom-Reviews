@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import RestaurantCard from '../Components/RestaurantCard'
 
+
 const Home = () => {
   const BASE_URL = 'http://localhost:3001/api'
 
@@ -22,7 +23,7 @@ const Home = () => {
     <body className="homepage">
     <div>
       <div>
-        <h2>Welcome to Bikini Bottom Reviews</h2>
+        <h2 id="home">Welcome to Bikini Bottom Reviews</h2>
       </div>
       <h4>Here are our world class restaurants!</h4>
       <div className="container-grid">
