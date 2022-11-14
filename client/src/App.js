@@ -7,6 +7,8 @@ import Nav from './Components/Nav'
 import './Styles/App.css'
 
 function App() {
+  /* const [authenticated, toggleAuthenticated] = useState(false)
+  const [user, setUser] = useState(null) */
   return (
     <div className="App">
       <header className="nav">
