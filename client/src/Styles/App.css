@@ -21,3 +21,28 @@ nav {
   display: flex;
   justify-content: space-evenly;
 }
+
+.menu{
+  display: block;
+  background-color: rgb(210,43,43,0.4);
+}
+
+.menu-details{
+  opacity: 0%;
+  display: block;
+  background-color: black;
+  color: white;
+  text-align: left;
+  padding: 10px;
+  width: 420px;
+  position: absolute;
+}
+
+.menu:hover{
+  background-color: rgb(210,43,43,1);
+  transition-duration: 1s;
+}
+.menu:hover .menu-details{
+  opacity: 100%;
+  transition-duration: 0.5s;
+}
