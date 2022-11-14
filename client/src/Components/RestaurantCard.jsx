@@ -1,8 +1,10 @@
 import React from 'react'
 
-const RestaurantCard = () => {
+const RestaurantCard = ({name}) => {
   return (
-    <div>RestaurantCard</div>
+    <div>
+      <h5>{name}</h5>
+    </div>
   )
 }
 

@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const getRestaurants = async () => {
       const response = await axios.get(`${BASE_URL}/restaurant/`)
-      console.log(response?.data)
+      setRestaurants(response?.data)
     }
     getRestaurants()
   }, [])
@@ -25,8 +25,9 @@ const Home = () => {
       <h4>Here are our premiere restaurants!</h4>
       <div className="container-grid">
         {restaurants.map((result) => (
-          <Link to={`/restaurant/${result._id}`} key={result._id}>
-            <RestaurantCard />
+          <Link to={`/restaurant/${result.id}`} key={result.id}>
+            {console.log(result.id)}
+            <RestaurantCard name={result.name} />
           </Link>
         ))}
       </div>
