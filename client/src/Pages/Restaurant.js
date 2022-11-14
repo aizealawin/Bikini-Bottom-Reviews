@@ -27,6 +27,17 @@ const Restaurant = () => {
     console.log(reviews)
 
 
+    const [users, updateUsers] = useState([])
+    useEffect(() => {
+        const api = async () => {
+            let res = await axios.get(`http://localhost:3001/api/user`)
+            updateUsers(res.data)
+        }
+        api()
+    }, [])
+    console.log(users)
+
+
     return (
         <div>
             {restaurants.map((res) => {
@@ -41,9 +52,17 @@ const Restaurant = () => {
                         <div className='reviews'>
                             <h3>Reviews</h3>
                             {reviews.map((res) => {
-                                return (
-                                    <p>{res.content}</p>
-                                )
+                                for (let i =0; i < users.length; i++) {
+                                    if (users[i].id === res.userId) {
+                                        return (
+                                            <div>
+                                            <h5>{users[i].username}</h5>
+                                            <img src={users[i].profilePic}/>
+                                            <p>{res.content}</p>
+                                            </div>
+                                        )
+                                    }
+                                }
                             })}
                         </div>
                     </div>
