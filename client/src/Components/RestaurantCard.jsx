@@ -1,8 +1,9 @@
 import React from 'react'
 
-const RestaurantCard = ({name}) => {
+const RestaurantCard = ({name, image}) => {
   return (
     <div>
+      <img src={image}/>
       <h5>{name}</h5>
     </div>
   )

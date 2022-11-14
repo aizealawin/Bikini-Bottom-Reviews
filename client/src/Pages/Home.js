@@ -13,6 +13,7 @@ const Home = () => {
     const getRestaurants = async () => {
       const response = await axios.get(`${BASE_URL}/restaurant/`)
       setRestaurants(response?.data)
+      console.log(response?.data)
     }
     getRestaurants()
   }, [])
@@ -22,12 +23,11 @@ const Home = () => {
       <div>
         <h2>Welcome to Bikini Bottom Reviews</h2>
       </div>
-      <h4>Here are our premiere restaurants!</h4>
+      <h4>Here are our world class restaurants!</h4>
       <div className="container-grid">
         {restaurants.map((result) => (
           <Link to={`/${result.id}`} key={result.id}>
-            {console.log(result.id)}
-            <RestaurantCard name={result.name} />
+            <RestaurantCard name={result.name} image={result.image} />
           </Link>
         ))}
       </div>
