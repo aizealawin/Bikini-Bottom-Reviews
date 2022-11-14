@@ -19,6 +19,7 @@ const Home = () => {
   }, [])
 
   return (
+    <body className="homepage">
     <div>
       <div>
         <h2>Welcome to Bikini Bottom Reviews</h2>
@@ -32,6 +33,7 @@ const Home = () => {
         ))}
       </div>
     </div>
+    </body>
   )
 }
 
