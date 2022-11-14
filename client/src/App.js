@@ -10,14 +10,14 @@ function App() {
   return (
     <div className="App">
       <header className="nav">
-        {/* <Nav /> */}
+        <Nav />
       </header>
       <main>
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Home />} />
           <Route path="/:restaurantId" element={<Restaurant />} />
-          {/* <Route path="/register" element={<Register />} /> */}
-          {/* <Route path="/login" element={<Login />} /> */}
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
     </div>
