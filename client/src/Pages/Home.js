@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import RestaurantCard from '../Components/RestaurantCard'
 
 const Home = () => {
   const BASE_URL = 'http://localhost:3001/api'
