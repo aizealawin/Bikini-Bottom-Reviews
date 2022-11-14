@@ -22,11 +22,12 @@ nav {
   justify-content: space-evenly;
 }
 
-/* .homepage {
+.homepage {
   background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp6864010.jpg&f=1&nofb=1&ipt=7e4f726c77cb216b8c121c68aa9f392e08425b406dfedb3c33656e4b1f4014ea&ipo=images');
   background-color: #89CFF0;
   height: 100vh;
-  object-fit: fill; */
+  object-fit: fill;
+}
 
 .menu{
   display: block;
