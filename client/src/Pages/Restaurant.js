@@ -57,7 +57,7 @@ const Restaurant = () => {
                                         return (
                                             <div>
                                             <h5>{users[i].username}</h5>
-                                            <img src={users[i].profilePic}/>
+                                            <img src={users[i].profilePic} className="pfp"/>
                                             <p>{res.content}</p>
                                             </div>
                                         )
