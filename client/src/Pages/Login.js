@@ -17,7 +17,7 @@ const Login = ({ setUser, toggleAuthenticated }) => {
     Navigate('/')
   }
   return (
-    <body className="login">
+    <div className="login">
       <div className="login-form">
         <h1>Login to submit review</h1>
 
@@ -53,7 +53,7 @@ const Login = ({ setUser, toggleAuthenticated }) => {
           </div>
         </div>
       </div>
-    </body>
+    </div>
   )
 }
 export default Login

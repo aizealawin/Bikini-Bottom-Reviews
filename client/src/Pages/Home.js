@@ -4,7 +4,6 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import RestaurantCard from '../Components/RestaurantCard'
 
-
 const Home = () => {
   const BASE_URL = 'http://localhost:3001/api'
 
@@ -20,21 +19,21 @@ const Home = () => {
   }, [])
 
   return (
-    <body className="homepage">
-    <div>
+    <div className="homepage">
       <div>
-        <h2 id="home">Welcome to Bikini Bottom Reviews</h2>
-      </div>
-      <h4>Here are our world class restaurants!</h4>
-      <div className="container-grid">
-        {restaurants.map((result) => (
-          <Link to={`/${result.id}`} key={result.id}>
-            <RestaurantCard name={result.name} image={result.image} />
-          </Link>
-        ))}
+        <div>
+          <h2 id="home">Welcome to Bikini Bottom Reviews</h2>
+        </div>
+        <h4>Here are our world class restaurants!</h4>
+        <div className="container-grid">
+          {restaurants.map((result) => (
+            <Link to={`/${result.id}`} key={result.id}>
+              <RestaurantCard name={result.name} image={result.image} />
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
-    </body>
   )
 }
 
