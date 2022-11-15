@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { RegisterUser } from '../services/auth'
 
 const Register = () => {
-  const navigate = useNavigate
+  const navigate = useNavigate()
   const initialFormValues = {
     username: '',
     email: '',

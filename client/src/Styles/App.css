@@ -91,3 +91,16 @@ nav:hover {
   opacity: 100%;
   transition-duration: 0.5s;
 }
+<<<<<<< HEAD
+=======
+
+.userReview {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.name-pfp > img{
+  width: 10px;
+  height: 10px;
+}
+>>>>>>> 61bc04fa3c0e497472d2e5af339e171dff758e70
