@@ -5,7 +5,7 @@ import Restaurant from './Pages/Restaurant'
 import Register from './Pages/Register'
 import Login from './Pages/Login'
 import Nav from './Components/Nav'
-import { CheckSession } from './services/auth'
+import { CheckSession, SignInUser } from './services/auth'
 import './Styles/App.css'
 
 function App() {
