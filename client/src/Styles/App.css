@@ -136,3 +136,8 @@ nav:hover {
   padding: 40px 0px;
 }
 
+.name-pfp > img{
+  width: 10px;
+  height: 10px;
+}
+
