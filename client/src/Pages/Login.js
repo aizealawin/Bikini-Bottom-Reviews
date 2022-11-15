@@ -1,15 +1,17 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useParams, Link, Navigate } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { SignInUser } from '../services/auth'
 
 const Login = ({ setUser, toggleAuthenticated }) => {
+  let Navigate = useNavigate() 
   const [formValues, setFormValues] = useState({ email: '', password: '' })
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
   const handleSubmit = async (e) => {
     e.preventDefault()
+    console.log(e)
     const payload = await SignInUser(formValues)
     setFormValues({ email: '', password: '' })
     setUser(payload)
@@ -22,16 +24,15 @@ const Login = ({ setUser, toggleAuthenticated }) => {
         <h1>Login to submit review</h1>
 
         <div className="form">
-          <form onSubmit={handleSubmit} />
 
           <div className="submit-form">
-            <form>
+          <form onSubmit={handleSubmit}>
               <div className="input-container">
-                <label>Username </label>
+                <label>Email </label>
                 <input
-                  type="text"
+                  type="email"
                   onChange={handleChange}
-                  name="username"
+                  name="email"
                   required
                 />
                 {/* {renderErrorMessage("uname")} */}
