@@ -62,7 +62,9 @@ const Restaurant = ({ user, authenticated }) => {
     }
     window.location.reload()
     const payload = await PostReview(formValues)
+    window.location.reload()
   }
+
 
   const handleDelete = async (id) => {
     await axios.delete(`http://localhost:3001/api/review/${id}`)
