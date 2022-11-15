@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import Client from '../services/api'
 import { PostReview } from '../services/review'
 
 const Restaurant = ({ user, authenticated }) => {
@@ -20,14 +21,15 @@ const Restaurant = ({ user, authenticated }) => {
     api()
   }, [])
 
+  const getReviews = async () => {
+    let res = await axios.get(
+      `http://localhost:3001/api/review/${restaurantId}`
+    )
+    updateReviews(res.data)
+  }
+
   useEffect(() => {
-    const api = async () => {
-      let res = await axios.get(
-        `http://localhost:3001/api/review/${restaurantId}`
-      )
-      updateReviews(res.data)
-    }
-    api()
+    getReviews()
   }, [])
 
   const [users, updateUsers] = useState([])
@@ -60,15 +62,13 @@ const Restaurant = ({ user, authenticated }) => {
       userId: parseInt(formValues.userId),
       ...formValues
     }
-    window.location.reload()
     const payload = await PostReview(formValues)
-    window.location.reload()
+    getReviews()
   }
 
-
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3001/api/review/${id}`)
-    updateReviews()
+    await Client.delete(`/api/review/${id}`)
+    getReviews()
   }
 
   return user && authenticated ? (
@@ -98,7 +98,6 @@ const Restaurant = ({ user, authenticated }) => {
                   name="rating"
                   onChange={handleChange}
                   value={formValues.rating}
-                  defaultValue="default"
                 >
                   <option value="default" hidden>
                     Rating
@@ -121,7 +120,7 @@ const Restaurant = ({ user, authenticated }) => {
                           <div className="name-pfp">
                             <h5>{users[i].username}</h5>
                             <p>{res.content}</p>
-                            <button onClick={() => handleDelete(restaurantId)}>
+                            <button onClick={() => handleDelete(res.id)}>
                               Delete
                             </button>
                           </div>
