@@ -60,15 +60,17 @@ const Restaurant = ({ user, authenticated }) => {
       userId: parseInt(formValues.userId),
       ...formValues
     }
+    window.location.reload()
     const payload = await PostReview(formValues)
     window.location.reload()
   }
 
-//   const handleDelete = async (id) => {
-//     await axios.delete(`/restaurant/${id}`)
-//     getReviews()
-// }
-// Im saving the day pt 2
+
+  const handleDelete = async (id) => {
+    await axios.delete(`http://localhost:3001/api/review/${id}`)
+    updateReviews()
+  }
+
   return user && authenticated ? (
     <div className="restaurant">
       {restaurants.map((res) => {
@@ -109,24 +111,26 @@ const Restaurant = ({ user, authenticated }) => {
                 </select>
                 <button onClick={handleSubmit}>Submit</button>
               </div>
-              <div className='mappedReviews'>
-              {reviews.map((res) => {
-                for (let i = 0; i < users.length; i++) {
-                  if (users[i].id === res.userId) {
-                    return (
-                      <div className="userReview" key={res.id}>
-                        <img src={users[i].profilePic} className="pfp" />
-                        <div className="name-pfp">
-                          <h5>{users[i].username}</h5>
-                          <p>{res.content}</p>
-                          {/* <button onClick={() => handleDelete(restaurant._id)}>Delete</button> */}
+              <div className="mappedReviews">
+                {reviews.map((res) => {
+                  for (let i = 0; i < users.length; i++) {
+                    if (users[i].id === res.userId) {
+                      return (
+                        <div className="userReview" key={res.id}>
+                          <img src={users[i].profilePic} className="pfp" />
+                          <div className="name-pfp">
+                            <h5>{users[i].username}</h5>
+                            <p>{res.content}</p>
+                            <button onClick={() => handleDelete(restaurantId)}>
+                              Delete
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                    )
+                      )
+                    }
                   }
-                }
-              })}
-            </div>
+                })}
+              </div>
             </div>
           </div>
         )
