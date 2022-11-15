@@ -61,13 +61,14 @@ const Restaurant = ({ user, authenticated }) => {
       ...formValues
     }
     const payload = await PostReview(formValues)
+    window.location.reload()
   }
 
 //   const handleDelete = async (id) => {
 //     await axios.delete(`/restaurant/${id}`)
 //     getReviews()
 // }
-
+// Im saving the day pt 2
   return user && authenticated ? (
     <div className="restaurant">
       {restaurants.map((res) => {
