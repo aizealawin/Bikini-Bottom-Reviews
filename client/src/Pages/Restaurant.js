@@ -63,6 +63,11 @@ const Restaurant = ({ user, authenticated }) => {
     const payload = await PostReview(formValues)
   }
 
+//   const handleDelete = async (id) => {
+//     await axios.delete(`/restaurant/${id}`)
+//     getReviews()
+// }
+
   return user && authenticated ? (
     <div className="restaurant">
       {restaurants.map((res) => {
@@ -112,6 +117,7 @@ const Restaurant = ({ user, authenticated }) => {
                         <div className="name-pfp">
                           <h5>{users[i].username}</h5>
                           <p>{res.content}</p>
+                          {/* <button onClick={() => handleDelete(restaurant._id)}>Delete</button> */}
                         </div>
                       </div>
                     )
