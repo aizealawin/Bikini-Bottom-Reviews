@@ -4,9 +4,10 @@ import { useParams, Link } from 'react-router-dom'
 
 const Login = () => {
   return (
-    <div className="form">
+    <body className="login">
+    <div className="login-form">
       <h1>Login to submit review</h1>
-      <div className="form">
+      <div className="submit-form">
         <form>
           <div className="input-container">
             <label>Username </label>
@@ -24,6 +25,7 @@ const Login = () => {
         </form>
       </div>
     </div>
+    </body>
   )
 }
 export default Login
