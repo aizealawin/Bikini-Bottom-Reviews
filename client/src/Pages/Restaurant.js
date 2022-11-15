@@ -114,18 +114,31 @@ const Restaurant = ({ user, authenticated }) => {
                 {reviews.map((res) => {
                   for (let i = 0; i < users.length; i++) {
                     if (users[i].id === res.userId) {
+                      console.log(users[i].id, user.id)
+                      if (users[i].id == user.id) {
+                        return (
+                          <div className="userReview" key={res.id}>
+                            <img src={users[i].profilePic} className="pfp" />
+                            <div className="name-pfp">
+                              <h5>{users[i].username}</h5>
+                              <p>{res.content}</p>
+                              <button onClick={() => handleDelete(res.id)}>
+                                Delete
+                              </button>
+                            </div>
+                          </div>
+                        )
+                      } else {
                       return (
                         <div className="userReview" key={res.id}>
                           <img src={users[i].profilePic} className="pfp" />
                           <div className="name-pfp">
                             <h5>{users[i].username}</h5>
                             <p>{res.content}</p>
-                            <button onClick={() => handleDelete(res.id)}>
-                              Delete
-                            </button>
                           </div>
                         </div>
                       )
+                    }
                     }
                   }
                 })}
