@@ -71,6 +71,10 @@ const Restaurant = ({ user, authenticated }) => {
     getReviews()
   }
 
+  const handleEdit = async (id) => {
+    await Client.put(`/api/review/${id}`)
+  }
+
   return user && authenticated ? (
     <div className="restaurant">
       {restaurants.map((res) => {
@@ -114,7 +118,6 @@ const Restaurant = ({ user, authenticated }) => {
                 {reviews.map((res) => {
                   for (let i = 0; i < users.length; i++) {
                     if (users[i].id === res.userId) {
-                      console.log(users[i].id, user.id)
                       if (users[i].id == user.id) {
                         return (
                           <div className="userReview" key={res.id}>
@@ -125,20 +128,21 @@ const Restaurant = ({ user, authenticated }) => {
                               <button onClick={() => handleDelete(res.id)}>
                                 Delete
                               </button>
+                              <button>Edit</button>
                             </div>
                           </div>
                         )
                       } else {
-                      return (
-                        <div className="userReview" key={res.id}>
-                          <img src={users[i].profilePic} className="pfp" />
-                          <div className="name-pfp">
-                            <h5>{users[i].username}</h5>
-                            <p>{res.content}</p>
+                        return (
+                          <div className="userReview" key={res.id}>
+                            <img src={users[i].profilePic} className="pfp" />
+                            <div className="name-pfp">
+                              <h5>{users[i].username}</h5>
+                              <p>{res.content}</p>
+                            </div>
                           </div>
-                        </div>
-                      )
-                    }
+                        )
+                      }
                     }
                   }
                 })}
