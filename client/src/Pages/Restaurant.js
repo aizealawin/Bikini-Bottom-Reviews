@@ -42,7 +42,7 @@ const Restaurant = ({ user, authenticated }) => {
 
   const initialValues = {
     restaurantId: parseInt(restaurantId),
-    userId: parseInt(user.id),
+    userId: parseInt(user?.id),
     content: '',
     rating: ''
   }

@@ -5,7 +5,7 @@ const Nav = ({user}) => {
   return(
 
 <nav className="navBar">
-{/*   <h2>Welcome {user.email}!</h2> */}
+<h2>Welcome {user?.email}!</h2> 
   <Link to="/">
   <h3>Home</h3>
 </Link>
