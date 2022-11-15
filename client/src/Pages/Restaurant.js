@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import { PostReview } from '../services/review'
 
 const Restaurant = ({ user, authenticated }) => {
   let Navigate = useNavigate()
@@ -40,8 +41,8 @@ const Restaurant = ({ user, authenticated }) => {
   }, [])
 
   const initialValues = {
-    restaurantId: restaurantId,
-    userId: '',
+    restaurantId: parseInt(restaurantId),
+    userId: parseInt(user.id),
     content: '',
     rating: ''
   }
@@ -54,12 +55,12 @@ const Restaurant = ({ user, authenticated }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await axios.post(`http://localhost:3001/api/review`, {
-      restaurantId: formValues.restaurantId,
-      userId: formValues.userId,
-      content: formValues.content,
-      rating: formValues.rating
-    })
+    const newData = {
+      restaurantId: parseInt(formValues.restaurantId),
+      userId: parseInt(formValues.userId),
+      ...formValues
+    }
+    const payload = await PostReview(formValues)
   }
 
   return user && authenticated ? (

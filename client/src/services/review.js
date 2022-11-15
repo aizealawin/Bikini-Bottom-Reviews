@@ -1,7 +1,7 @@
 import Client from './api'
-export const PostReview = async () => {
+export const PostReview = async (data) => {
   try {
-    const post = await Client.post({ ...req.body })
+    const res = await Client.post('/api/review', data)
     return res.data
   } catch (error) {
     throw error
