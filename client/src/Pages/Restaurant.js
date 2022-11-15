@@ -37,7 +37,7 @@ const Restaurant = () => {
   }, [])
 
   return (
-    <div>
+    <div className="restaurant">
       {restaurants.map((res) => {
         return (
           <div className="image" key={res.id}>
@@ -54,8 +54,10 @@ const Restaurant = () => {
                   if (users[i].id === res.userId) {
                     return (
                       <div className="userReview" key={res.id}>
-                        <h5>{users[i].username}</h5>
-                        <img src={users[i].profilePic} className="pfp" />
+                        <div className="name-pfp">
+                          <h5>{users[i].username}</h5>
+                          <img src={users[i].profilePic} className="pfp" />
+                        </div>
                         <p>{res.content}</p>
                       </div>
                     )
