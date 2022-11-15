@@ -6,6 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  font-size: 25px;
 }
 
 .container-grid > .a > img {
@@ -13,13 +14,21 @@
 }
 
 img {
-  width: 100px;
-  height: 100px;
+  width: 275px;
+  height: 275px;
+  border: solid 10px white; 
+  border-radius: 10%;
+  box-shadow: 5px 5px 20px 5px #000;
 }
 
 nav {
   display: flex;
   justify-content: space-evenly;
+  background-color: salmon;
+}
+
+nav:hover {
+  
 }
 
 .homepage {
@@ -27,11 +36,40 @@ nav {
   background-color: #89CFF0;
   height: 100vh;
   object-fit: fill;
+  margin: 0;
+  padding: 35px;
+}
+
+#home {
+  text-shadow: 0 0 15px white;
+  font-size: 40px;
+}
+
+.login {
+  background-image: url('https://wallpapercave.com/wp/wp2891332.jpg');
+  height: 100vh;
+  object-fit: fill;
+  margin: 0;
+  padding: 35px;
+}
+
+.login-form {
+  background-color: white;
+  padding: 5px;
+  margin: 10px 200px 25px 200px;
+  border: solid 5px black; 
+  border-radius: 1em;
+  box-shadow: 5px 5px 20px 5px #000;
+}
+.submit-form {
+  padding: 10px;
+  margin: 0 auto;
 }
 
 .menu{
   display: block;
   background-color: rgb(210,43,43,0.4);
+
 }
 
 .menu-details{

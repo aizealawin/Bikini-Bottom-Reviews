@@ -17,10 +17,16 @@ const Login = ({ setUser, toggleAuthenticated }) => {
     Navigate('/')
   }
   return (
-    <div className="form">
+    <body className="login">
+    <div className="login-form">
       <h1>Login to submit review</h1>
+
       <div className="form">
         <form onSubmit={handleSubmit}>
+
+      <div className="submit-form">
+        <form>
+
           <div className="input-container">
             <label>Username </label>
             <input
@@ -47,6 +53,7 @@ const Login = ({ setUser, toggleAuthenticated }) => {
         </form>
       </div>
     </div>
+    </body>
   )
 }
 export default Login
