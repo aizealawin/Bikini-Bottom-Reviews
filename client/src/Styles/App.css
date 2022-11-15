@@ -66,6 +66,16 @@ nav:hover {
   margin: 0 auto;
 }
 
+.restaurant{
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4d87b0f4-ae26-4b18-835c-af3a7ce1349f/dde47yj-aea81a6b-3874-4ed8-aea3-26a456c7a23f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRkODdiMGY0LWFlMjYtNGIxOC04MzVjLWFmM2E3Y2UxMzQ5ZlwvZGRlNDd5ai1hZWE4MWE2Yi0zODc0LTRlZDgtYWVhMy0yNmE0NTZjN2EyM2YucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.VeuUbwR7x4o7yk_8D-jPMoTPXD5mVmMEdbJ6CEG9B9s');
+  background-size: cover;
+  object-fit: fill;
+  margin: 0;
+  padding: 10px;
+  height: 100vh;
+
+}
+
 .menu{
   display: block;
   background-color: rgb(210,43,43,0.4);
@@ -95,9 +105,39 @@ nav:hover {
 .userReview {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 10px;
+  border-width: 2px;
+  /* background-color: blue; */
+  margin: 10px 40px;
+  border-style: solid;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.name-pfp{
+  /* background-color: aqua; */
+  width: 80%;
+  text-align: left;
+}
+
+.userReview > img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-style: none;
+  padding: 0%;
+  margin: 25px 20px 0 0;
+}
+
+.userReview > p{
+  background-color: beige;
+  width: 50%;
+  margin: 0px;
+  padding: 40px 0px;
 }
 
 .name-pfp > img{
   width: 10px;
   height: 10px;
 }
+

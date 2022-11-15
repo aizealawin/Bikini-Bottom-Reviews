@@ -105,11 +105,11 @@ const Restaurant = () => {
                   if (users[i].id === res.userId) {
                     return (
                       <div className="userReview" key={res.id}>
+                        <img src={users[i].profilePic} className="pfp" />
                         <div className="name-pfp">
                           <h5>{users[i].username}</h5>
-                          <img src={users[i].profilePic} className="pfp" />
+                          <p>{res.content}</p>
                         </div>
-                        <p>{res.content}</p>
                       </div>
                     )
                   }
