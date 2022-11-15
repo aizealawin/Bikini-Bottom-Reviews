@@ -4,7 +4,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { SignInUser } from '../services/auth'
 
 const Login = ({ setUser, toggleAuthenticated }) => {
-  let Navigate = useNavigate() 
+  let Navigate = useNavigate()
   const [formValues, setFormValues] = useState({ email: '', password: '' })
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
@@ -24,9 +24,8 @@ const Login = ({ setUser, toggleAuthenticated }) => {
         <h1>Login to submit review</h1>
 
         <div className="form">
-
           <div className="submit-form">
-          <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
               <div className="input-container">
                 <label>Email </label>
                 <input
