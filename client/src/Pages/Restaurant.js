@@ -108,6 +108,7 @@ const Restaurant = ({ user, authenticated }) => {
                 </select>
                 <button onClick={handleSubmit}>Submit</button>
               </div>
+              <div className='mappedReviews'>
               {reviews.map((res) => {
                 for (let i = 0; i < users.length; i++) {
                   if (users[i].id === res.userId) {
@@ -124,6 +125,7 @@ const Restaurant = ({ user, authenticated }) => {
                   }
                 }
               })}
+            </div>
             </div>
           </div>
         )

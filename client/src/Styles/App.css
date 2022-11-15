@@ -141,3 +141,16 @@ nav:hover {
   height: 10px;
 }
 
+.mappedReviews {
+  height: 320px;
+  overflow: scroll;
+  overflow-x: hidden;
+  margin: auto;
+}
+
+
+@media screen and (max-height: 900px) {
+  .mappedReviews {
+    height: 250px;
+  }
+}
