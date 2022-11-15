@@ -1,8 +1,10 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-const Restaurant = () => {
+const Restaurant = ({ user, authenticated }) => {
+  let Navigate = useNavigate()
   const [restaurants, updateRestaurants] = useState([])
   const [reviews, updateReviews] = useState([])
   const { restaurantId } = useParams()
@@ -41,14 +43,13 @@ const Restaurant = () => {
     restaurantId: restaurantId,
     userId: '',
     content: '',
-    rating: '',
-    
+    rating: ''
   }
 
   const [formValues, setFormValues] = useState(initialValues)
 
   const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value})
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = async (e) => {
@@ -61,12 +62,12 @@ const Restaurant = () => {
     })
   }
 
-  return (
+  return user && authenticated ? (
     <div className="restaurant">
       {restaurants.map((res) => {
         return (
           <div className="image" key={res.id}>
-            <img src={res.image} alt={res.name}/>
+            <img src={res.image} alt={res.name} />
             <h1>{res.name}</h1>
             <div className="menu">
               <h3>Menu</h3>
@@ -74,29 +75,30 @@ const Restaurant = () => {
             </div>
             <div className="reviews">
               <h3>Reviews</h3>
-              <div className='addReview'>
+              <div className="addReview">
                 <h4>Add Review:</h4>
                 <input
-                type="text"
-                name='content'
-                onChange={handleChange}
-                value={formValues.content}
-                placeholder="Review Comments"
-                required
+                  type="text"
+                  name="content"
+                  onChange={handleChange}
+                  value={formValues.content}
+                  placeholder="Review Comments"
+                  required
+                ></input>
+                <select
+                  name="rating"
+                  onChange={handleChange}
+                  value={formValues.rating}
+                  defaultValue="default"
                 >
-                </input>
-                <select 
-                name='rating'
-                onChange={handleChange}
-                value={formValues.rating}
-                defaultValue="default"
-                >
-                <option value="default" hidden>Rating</option>
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
+                  <option value="default" hidden>
+                    Rating
+                  </option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
                 </select>
                 <button onClick={handleSubmit}>Submit</button>
               </div>
@@ -119,6 +121,11 @@ const Restaurant = () => {
           </div>
         )
       })}
+    </div>
+  ) : (
+    <div className="protected">
+      <h3>Oops! You must be signed in to do that!</h3>
+      <button onClick={() => Navigate('/login')}>Sign In</button>
     </div>
   )
 }
