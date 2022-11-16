@@ -157,6 +157,7 @@ const Restaurant = ({ user, authenticated }) => {
                             <img src={users[i].profilePic} className="pfp" />
                             <div className="name-pfp">
                               <h5>{users[i].username}</h5>
+                              <p>{res.rating} Star</p>
                               <textarea
                                 name="content"
                                 ref={ref}
@@ -167,8 +168,6 @@ const Restaurant = ({ user, authenticated }) => {
                               ></textarea>
                               <br />
 
-                              <p>{res.rating}</p>
-                              <p>{res.content}</p>
                               <button
                                 className="deleteButton"
                                 onClick={() => handleDelete(res.id)}
