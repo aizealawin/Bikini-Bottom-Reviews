@@ -75,7 +75,7 @@ const Restaurant = ({ user, authenticated }) => {
     await Client.put(`/api/review/${id}`)
   }
 
-  return user && authenticated ? (
+  return (
     <div className="restaurant">
       {restaurants.map((res) => {
         return (
@@ -118,8 +118,8 @@ const Restaurant = ({ user, authenticated }) => {
               <div className="mappedReviews">
                 {reviews.map((res) => {
                   for (let i = 0; i < users.length; i++) {
-                    if (users[i].id === res.userId) {
-                      if (users[i].id == user.id) {
+                    if (users[i]?.id === res?.userId) {
+                      if (users[i]?.id == user?.id) {
                         return (
                           <div className="userReview" key={res.id}>
                             <img src={users[i].profilePic} className="pfp" />
@@ -135,7 +135,7 @@ const Restaurant = ({ user, authenticated }) => {
                           </div>
                         )
                       } else {
-                        return (
+                        return user && authenticated ? (
                           <div className="userReview" key={res.id}>
                             <img src={users[i].profilePic} className="pfp" />
                             <div className="name-pfp">
@@ -144,6 +144,8 @@ const Restaurant = ({ user, authenticated }) => {
                               <p>{res.content}</p>
                             </div>
                           </div>
+                        ) : (
+                          <h2></h2>
                         )
                       }
                     }
@@ -154,11 +156,6 @@ const Restaurant = ({ user, authenticated }) => {
           </div>
         )
       })}
-    </div>
-  ) : (
-    <div className="protected">
-      <h3>Oops! You must be signed in to do that!</h3>
-      <button onClick={() => Navigate('/login')}>Sign In</button>
     </div>
   )
 }
