@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import Client from '../services/api'
@@ -71,8 +71,41 @@ const Restaurant = ({ user, authenticated }) => {
     getReviews()
   }
 
-  const handleEdit = async (id) => {
-    await Client.put(`/api/review/${id}`)
+  const initialEditValue = {
+    content: ''
+  }
+
+  const [editReview, setEditValue] = useState(initialEditValue)
+
+  const handleEditChange = (e) => {
+    setEditValue({ ...editReview, [e.target.name]: e.target.value })
+  }
+
+  const ref = useRef(null)
+  const submitEditRef = useRef(null)
+  const editButton = useRef(null)
+  const transformEdit = async (content) => {
+    setEditValue({ content: content })
+    const editButtonRef = editButton.current
+    const textarea = ref.current
+    const submitEdit = submitEditRef.current
+    textarea.className = 'editTextArea'
+    textarea.readOnly = false
+    submitEdit.className = 'submitEdit'
+    editButtonRef.className = 'hiddenButton'
+  }
+
+  const handleEditSubmit = async (e, id) => {
+    const editButtonRef = editButton.current
+    const textarea = ref.current
+    const submitEdit = submitEditRef.current
+    textarea.readOnly = true
+    textarea.className = 'reviewArea'
+    submitEdit.className = 'hiddenButton'
+    editButtonRef.className = ''
+    e.preventDefault()
+    await Client.put(`/api/review/${id}`, editReview)
+    getReviews()
   }
 
   return (
@@ -125,12 +158,37 @@ const Restaurant = ({ user, authenticated }) => {
                             <img src={users[i].profilePic} className="pfp" />
                             <div className="name-pfp">
                               <h5>{users[i].username}</h5>
+                              <textarea
+                                name="content"
+                                ref={ref}
+                                className="reviewArea"
+                                defaultValue={res.content}
+                                onChange={handleEditChange}
+                                readOnly
+                              ></textarea>
+                              <br />
+                              <button
+                                className="deleteButton"
+                                onClick={() => handleDelete(res.id)}
+                              >
                               <p>{res.rating}</p>
                               <p>{res.content}</p>
                               <button onClick={() => handleDelete(res.id)}>
                                 Delete
                               </button>
-                              <button>Edit</button>
+                              <button
+                                ref={editButton}
+                                onClick={() => transformEdit(res.content)}
+                              >
+                                Edit
+                              </button>
+                              <button
+                                ref={submitEditRef}
+                                className="hiddenButton"
+                                onClick={(e) => handleEditSubmit(e, res.id)}
+                              >
+                                Submit Edits
+                              </button>
                             </div>
                           </div>
                         )
