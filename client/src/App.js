@@ -33,7 +33,11 @@ function App() {
   return (
     <div className="App">
       <header className="nav">
-        <Nav authenticated={authenticated} user={user} />
+        <Nav
+          authenticated={authenticated}
+          user={user}
+          handleLogOut={handleLogOut}
+        />
       </header>
       <main>
         <Routes>
@@ -49,7 +53,6 @@ function App() {
               <Login
                 setUser={setUser}
                 toggleAuthenticated={toggleAuthenticated}
-                handleLogOut={handleLogOut}
               />
             }
           />
