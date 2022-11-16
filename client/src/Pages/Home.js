@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import RestaurantCard from '../Components/RestaurantCard'
 
 const Home = () => {
-  const BASE_URL = 'http://localhost:3001/api'
+  const BASE_URL = 'https://bikini-bottom-reviews.herokuapp.com/api'
 
   const [restaurants, setRestaurants] = useState([])
 

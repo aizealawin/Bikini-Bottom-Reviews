@@ -6,25 +6,22 @@ import Client from '../services/api'
 import { PostReview } from '../services/review'
 
 const Restaurant = ({ user, authenticated }) => {
-  let Navigate = useNavigate()
+  const BASE_URL = 'https://bikini-bottom-reviews.herokuapp.com/api'
+
   const [restaurants, updateRestaurants] = useState([])
   const [reviews, updateReviews] = useState([])
   const { restaurantId } = useParams()
 
   useEffect(() => {
     const api = async () => {
-      let res = await axios.get(
-        `http://localhost:3001/api/restaurant/${restaurantId}`
-      )
+      let res = await axios.get(`${BASE_URL}/${restaurantId}`)
       updateRestaurants(res.data)
     }
     api()
   }, [])
 
   const getReviews = async () => {
-    let res = await axios.get(
-      `http://localhost:3001/api/review/${restaurantId}`
-    )
+    let res = await axios.get(`${BASE_URL}/${restaurantId}`)
     updateReviews(res.data)
   }
 
@@ -36,7 +33,7 @@ const Restaurant = ({ user, authenticated }) => {
 
   useEffect(() => {
     const api = async () => {
-      let res = await axios.get(`http://localhost:3001/api/user`)
+      let res = await axios.get(`${BASE_URL}/user`)
       updateUsers(res.data)
     }
     api()
