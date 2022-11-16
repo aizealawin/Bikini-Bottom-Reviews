@@ -34,9 +34,9 @@ function App() {
     <div className="App">
       <header className="nav">
         <Nav
-          handleLogOut={handleLogOut}
           authenticated={authenticated}
           user={user}
+          handleLogOut={handleLogOut}
         />
       </header>
       <main>
