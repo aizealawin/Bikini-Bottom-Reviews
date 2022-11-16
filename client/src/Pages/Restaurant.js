@@ -118,7 +118,7 @@ const Restaurant = ({ user, authenticated }) => {
             <div className="menu">
               <h3>Menu</h3>
 
-              <p className="menu-details">{res.menu}</p>
+              <img src={res.menu} className="menu-details" />
             </div>
             <div className="reviews">
               <h3>Reviews</h3>
