@@ -35,7 +35,7 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
   return(
 <header className="navBar">
   <Sound
-    url={grass}
+    url={blues}
     playStatus={Sound.status.PLAYING}
     volume = {7}
     loop = {true}
