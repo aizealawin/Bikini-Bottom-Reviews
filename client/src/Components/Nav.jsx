@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Nav = ({user}) => {
+const Nav = ({user, handleLogOut}) => {
   return(
 
 <nav className="navBar">
@@ -15,6 +15,7 @@ const Nav = ({user}) => {
 <Link to="/register">
   <h3>Register</h3>
 </Link>
+<Link onclick={handleLogOut} to="/">Log Out</Link>
 
 </nav>
 
