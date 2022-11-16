@@ -1,6 +1,6 @@
 import Axios from 'axios'
 
-export const BASE_URL = 'https://bikini-bottom-reviews.herokuapp.com/api'
+export const BASE_URL = 'https://bikini-bottom-reviews.herokuapp.com'
 
 const Client = Axios.create({ baseURL: BASE_URL })
 
