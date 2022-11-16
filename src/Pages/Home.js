@@ -13,7 +13,6 @@ const Home = () => {
     const getRestaurants = async () => {
       const response = await axios.get(`${BASE_URL}/restaurant/`)
       setRestaurants(response?.data)
-      console.log(response?.data)
     }
     getRestaurants()
   }, [])
