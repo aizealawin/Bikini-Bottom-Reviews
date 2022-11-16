@@ -14,14 +14,14 @@ const Restaurant = ({ user, authenticated }) => {
 
   useEffect(() => {
     const api = async () => {
-      let res = await axios.get(`${BASE_URL}/${restaurantId}`)
+      let res = await axios.get(`${BASE_URL}/restaurant/${restaurantId}`)
       updateRestaurants(res.data)
     }
     api()
   }, [])
 
   const getReviews = async () => {
-    let res = await axios.get(`${BASE_URL}/${restaurantId}`)
+    let res = await axios.get(`${BASE_URL}/review/${restaurantId}`)
     updateReviews(res.data)
   }
 
