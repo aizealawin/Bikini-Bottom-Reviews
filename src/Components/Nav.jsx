@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Sound from 'react-sound'
+import blues from '../music/blues.mp3'
+import grass from '../music/grass.mp3'
 
 const Nav = ({ authenticated, user, handleLogOut}) => {
   let authenticatedOptions
@@ -31,6 +34,12 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
 
   return(
 <header className="navBar">
+  <Sound
+    url={grass}
+    playStatus={Sound.status.PLAYING}
+    volume = {7}
+    loop = {true}
+  />
   <Link to ="/">
       {/* <div>
         <img className="logo" 
