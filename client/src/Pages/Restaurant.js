@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import Client from '../services/api'
@@ -71,11 +71,44 @@ const Restaurant = ({ user, authenticated }) => {
     getReviews()
   }
 
-  const handleEdit = async (id) => {
-    await Client.put(`/api/review/${id}`)
+  const initialEditValue = {
+    content: ''
   }
 
-  return user && authenticated ? (
+  const [editReview, setEditValue] = useState(initialEditValue)
+
+  const handleEditChange = (e) => {
+    setEditValue({ ...editReview, [e.target.name]: e.target.value })
+  }
+
+  const ref = useRef(null)
+  const submitEditRef = useRef(null)
+  const editButton = useRef(null)
+  const transformEdit = async (content) => {
+    setEditValue({ content: content })
+    const editButtonRef = editButton.current
+    const textarea = ref.current
+    const submitEdit = submitEditRef.current
+    textarea.className = 'editTextArea'
+    textarea.readOnly = false
+    submitEdit.className = 'submitEdit'
+    editButtonRef.className = 'hiddenButton'
+  }
+
+  const handleEditSubmit = async (e, id) => {
+    const editButtonRef = editButton.current
+    const textarea = ref.current
+    const submitEdit = submitEditRef.current
+    textarea.readOnly = true
+    textarea.className = 'reviewArea'
+    submitEdit.className = 'hiddenButton'
+    editButtonRef.className = ''
+    e.preventDefault()
+    await Client.put(`/api/review/${id}`, editReview)
+    getReviews()
+  }
+
+  return (
     <div className="restaurant">
       {restaurants.map((res) => {
         return (
@@ -118,24 +151,48 @@ const Restaurant = ({ user, authenticated }) => {
               <div className="mappedReviews">
                 {reviews.map((res) => {
                   for (let i = 0; i < users.length; i++) {
-                    if (users[i].id === res.userId) {
-                      if (users[i].id == user.id) {
+                    if (users[i]?.id === res?.userId) {
+                      if (users[i]?.id == user?.id) {
                         return (
                           <div className="userReview" key={res.id}>
                             <img src={users[i].profilePic} className="pfp" />
                             <div className="name-pfp">
                               <h5>{users[i].username}</h5>
-                              <p>{res.rating}</p>
-                              <p>{res.content}</p>
-                              <button onClick={() => handleDelete(res.id)}>
+                              <p>{res.rating} Star</p>
+                              <textarea
+                                name="content"
+                                ref={ref}
+                                className="reviewArea"
+                                defaultValue={res.content}
+                                onChange={handleEditChange}
+                                readOnly
+                              ></textarea>
+                              <br />
+
+                              <button
+                                className="deleteButton"
+                                onClick={() => handleDelete(res.id)}
+                              >
                                 Delete
                               </button>
-                              <button>Edit</button>
+                              <button
+                                ref={editButton}
+                                onClick={() => transformEdit(res.content)}
+                              >
+                                Edit
+                              </button>
+                              <button
+                                ref={submitEditRef}
+                                className="hiddenButton"
+                                onClick={(e) => handleEditSubmit(e, res.id)}
+                              >
+                                Submit Edits
+                              </button>
                             </div>
                           </div>
                         )
                       } else {
-                        return (
+                        return user && authenticated ? (
                           <div className="userReview" key={res.id}>
                             <img src={users[i].profilePic} className="pfp" />
                             <div className="name-pfp">
@@ -144,6 +201,8 @@ const Restaurant = ({ user, authenticated }) => {
                               <p>{res.content}</p>
                             </div>
                           </div>
+                        ) : (
+                          <h2></h2>
                         )
                       }
                     }
@@ -154,11 +213,6 @@ const Restaurant = ({ user, authenticated }) => {
           </div>
         )
       })}
-    </div>
-  ) : (
-    <div className="protected">
-      <h3>Oops! You must be signed in to do that!</h3>
-      <button onClick={() => Navigate('/login')}>Sign In</button>
     </div>
   )
 }
