@@ -5,7 +5,7 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
   let authenticatedOptions
   if (user) {
     authenticatedOptions = (
-      <nav>
+      <nav className="navBar">
         <h2>Welcome {user?.email}!</h2>
         <Link to="/">Home</Link>
         <Link onClick={handleLogOut} to="/">
@@ -27,12 +27,17 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
     <h3>Register</h3>
       </Link>
   </nav>
-  )
+)
+
   return(
 <header className="navBar">
   <Link to ="/">
-
-
+      {/* <div>
+        <img className="logo" 
+        src="https://media4.giphy.com/media/QUXYcgCwvCm4cKcrI3/giphy.gif"
+        alt="welcome banner"
+        />
+      </div> */}
     </Link>
       {authenticated && user ? authenticatedOptions : openOptions}
     </header>

@@ -155,6 +155,20 @@ nav:hover {
   }
 }
 
+.register-form {
+  background-color: white;
+  padding: 5px;
+  margin: 25px 200px 25px 200px;
+  border: solid 5px black; 
+  border-radius: 1em;
+  box-shadow: 5px 5px 20px 5px #000;
+}
+
+.register-form li {
+  list-style: none;
+  padding: 2px;
+}
+
 .reviewArea{
   background-color: rgb(210,43,43,0);
   border: none;
@@ -180,4 +194,5 @@ nav:hover {
 }
 
 .submitEdit{
+
 }
