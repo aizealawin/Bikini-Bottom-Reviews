@@ -154,3 +154,30 @@ nav:hover {
     height: 250px;
   }
 }
+
+.reviewArea{
+  background-color: rgb(210,43,43,0);
+  border: none;
+  font-family: helvetica;
+  resize: none;
+  text-decoration: none;
+  outline: none;
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  font-size: medium;
+  width: 100%;
+}
+
+.hiddenButton{
+  display: none;
+}
+
+.editTextArea{
+  background-color: rgb(255,255,255,0.4);
+}
+
+.submitEdit{
+}
