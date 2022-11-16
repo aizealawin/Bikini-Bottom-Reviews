@@ -166,13 +166,13 @@ const Restaurant = ({ user, authenticated }) => {
                                 readOnly
                               ></textarea>
                               <br />
+
+                              <p>{res.rating}</p>
+                              <p>{res.content}</p>
                               <button
                                 className="deleteButton"
                                 onClick={() => handleDelete(res.id)}
                               >
-                              <p>{res.rating}</p>
-                              <p>{res.content}</p>
-                              <button onClick={() => handleDelete(res.id)}>
                                 Delete
                               </button>
                               <button
