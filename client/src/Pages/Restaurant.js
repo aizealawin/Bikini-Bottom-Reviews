@@ -101,6 +101,8 @@ const Restaurant = ({ user, authenticated }) => {
     const submitEdit = submitEditRef.current
     textarea.readOnly = true
     textarea.className = 'reviewArea'
+    submitEdit.className = 'hiddenButton'
+    editButtonRef.className = ''
     e.preventDefault()
     await Client.put(`/api/review/${id}`, editReview)
     getReviews()

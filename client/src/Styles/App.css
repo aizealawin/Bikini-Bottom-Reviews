@@ -164,10 +164,11 @@ nav:hover {
   outline: none;
   display: block;
   margin-top: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 0;
   margin-left: 0;
   margin-right: 0;
   font-size: medium;
+  width: 100%;
 }
 
 .hiddenButton{
