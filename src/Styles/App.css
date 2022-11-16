@@ -200,3 +200,8 @@ nav:hover {
 
   
 }
+
+.music {
+  opacity: 0;
+  float: left;
+}
