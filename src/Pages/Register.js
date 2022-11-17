@@ -9,15 +9,17 @@ const Register = () => {
     email: '',
     profilePic: '',
     password: '',
-    confirmPassword: 1234
+    confirmPassword: ''
   }
   const [formValues, setFormValues] = useState(initialFormValues)
+  const [pass, setPass] = useState("right")
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if(formValues.password === formValues.confirmPassword){
     await RegisterUser({
       email: formValues.email,
       username: formValues.username,
@@ -25,9 +27,14 @@ const Register = () => {
       password: formValues.password,
       confirmPassword: formValues.password
     })
+    setPass('right')
     setFormValues(initialFormValues)
     navigate('/login')
+  } else {
+    console.log('nah')
+    setPass('wrong')
   }
+}
   return (
     <div id="register-img">
       <div className="register-form">
@@ -90,11 +97,13 @@ const Register = () => {
                   <input
                     type="password"
                     onChange={handleChange}
+                    value={formValues.confirmPassword}
                     placeholder="password"
                     name="confirmPassword"
                     required
                   />
                 </li>
+                <li><p className={pass}>Passwords are not the same</p></li>
               </ul>
               {/* {renderErrorMessage("pass")} */}
             </div>

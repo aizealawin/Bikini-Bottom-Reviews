@@ -271,3 +271,10 @@ nav:hover {
   margin-top: 10px;
 }
 
+.right {
+  display: none;
+}
+
+.wrong {
+  color: red;
+}
