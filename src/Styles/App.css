@@ -1,13 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300&display=swap');
-
 .App {
   text-align: center;
-  font-family: 'Space Grotesk';
-}
-html, body{
-  min-height: 100%;
-  min-width: 100%;
-
 }
 
 .container-grid {
@@ -17,12 +9,11 @@ html, body{
   font-size: 25px;
 }
 #logo {
-  width: 35px;
-  height: 34px;
-  margin: 12px;
+  width: 30px;
+  height: 30px;
   justify-content: right;
   background-size: cover;
-  border: solid 5px white; 
+  border: solid 10px white; 
   border-radius: 10%;
   background-color: salmon;
 } 
@@ -43,24 +34,21 @@ html, body{
   border-radius: 10%;
   box-shadow: 5px 5px 20px 5px #000;
 } 
-header{
-margin: auto;
 
-}
 nav {
   display: flex;
   justify-content: space-evenly;
   background-color: salmon;
-  width: 100%;
+}
+
+nav:hover {
+  
 }
 
 .homepage {
   background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b297e143-e206-4a8f-8b5c-59dbc26a99d5/ddtdlgv-48ac2b91-bab5-41fe-a2ca-7b80cc57c92d.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IyOTdlMTQzLWUyMDYtNGE4Zi04YjVjLTU5ZGJjMjZhOTlkNVwvZGR0ZGxndi00OGFjMmI5MS1iYWI1LTQxZmUtYTJjYS03YjgwY2M1N2M5MmQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.mrMOlioaOnl4YVoeaOz9lzHDZFxzZxF_oBI6Eu4_rLs');
   background-color: #89CFF0;
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  /* width: 100vw; */
+  height: 100vh;
   object-fit: fill;
   margin: 0;
   padding: 35px;
@@ -98,8 +86,8 @@ nav {
   object-fit: fill;
   margin: 0;
   padding: 10px;
-  height: 100%;
-  
+  height: 100vh;
+
 }
 
 .menu{
@@ -175,9 +163,6 @@ nav {
   overflow: scroll;
   overflow-x: hidden;
   margin: auto;
-  margin-bottom: 10%;
-  margin-top: 5%;
-
 }
 
 
@@ -204,7 +189,7 @@ nav {
 .reviewArea{
   background-color: rgb(210,43,43,0);
   border: none;
-  font-family: 'Space Grotesk';
+  font-family: helvetica;
   resize: none;
   text-decoration: none;
   outline: none;
@@ -235,19 +220,7 @@ nav {
   opacity: 0;
   float: left;
 }
-#register-img {
-  background-image: url('https://i0.wp.com/www.society19.com/wp-content/uploads/2017/06/spongebobepisodes.jpg?fit=800%2C492&ssl=1');
-  background-size: cover; 
-  height: 100vh;
-  object-fit: fill;
-  margin: 0;
-  padding: 35px;
-  
-}
 
 .myLeg {
   height: 20px;
-}
-.login-auth {
-  color: white;
 }
