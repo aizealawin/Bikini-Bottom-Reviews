@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import RestaurantCard from '../Components/RestaurantCard'
+import Sound from 'react-sound'
+import myLeg from '../music/myLeg.mp3'
+
 
 const Home = () => {
   const BASE_URL = 'https://bikini-bottom-reviews.herokuapp.com/api'
@@ -17,8 +20,17 @@ const Home = () => {
     getRestaurants()
   }, [])
 
+  const  [isPlaying, setIsPlaying] = useState(false);
+
+
   return (
     <div className="homepage">
+          <Sound
+      url={myLeg}
+      playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
+      volume = {40}
+      loop = {false}
+    />
       <div>
         <div>
           <h2 id="home">Welcome to Bikini Bottom Reviews</h2>
@@ -31,6 +43,7 @@ const Home = () => {
             </Link>
           ))}
         </div>
+        <img className='myLeg' src='https://64.media.tumblr.com/59156f76524c7b4314f55064e064d66d/tumblr_mgn8duAC9A1s2ei6lo1_250.png' onClick={() => setIsPlaying(!isPlaying)} />
       </div>
     </div>
   )
