@@ -121,6 +121,11 @@ nav:hover {
 .menu:hover{
   background-color: rgb(210,43,43,1);
   transition-duration: 1s;
+  padding: 100px;
+}
+
+.menuTitle {
+  height: max-content;
 }
 
 .menuTitle {
@@ -256,7 +261,6 @@ nav:hover {
   color: white;
 }
 .reviews {
-  margin-top: 200px;
-
+  margin-top: 10px;
 }
 
