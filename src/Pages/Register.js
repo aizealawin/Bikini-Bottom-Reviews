@@ -90,7 +90,6 @@ const Register = () => {
                   <input
                     type="password"
                     onChange={handleChange}
-                    value={formValues.password}
                     placeholder="password"
                     name="password"
                     required
