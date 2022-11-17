@@ -108,7 +108,7 @@ nav:hover {
 
 .menu-details{
   opacity: 0%;
-  display: flex;
+  display: none;
   background-color: black;
   color: white;
   text-align: left;
@@ -122,9 +122,19 @@ nav:hover {
   background-color: rgb(210,43,43,1);
   transition-duration: 1s;
 }
+
+.menuTitle {
+  height: max-content;
+}
+
 .menu:hover .menu-details{
   opacity: 100%;
   transition-duration: 0.5s;
+  display: flex;
+}
+
+.menu:hover ~ .reviews{
+  margin-top: 160px;
 }
 
 .userReview {
@@ -192,6 +202,16 @@ nav:hover {
 .register-form li {
   list-style: none;
   padding: 2px;
+}
+
+#register-img {
+  background-image: url('https://i0.wp.com/www.society19.com/wp-content/uploads/2017/06/spongebobepisodes.jpg?fit=800%2C492&ssl=1');
+  background-size: cover; 
+  height: 100vh;
+  object-fit: fill;
+  margin: 0;
+  padding: 35px;
+  
 }
 
 .reviewArea{
