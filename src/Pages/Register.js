@@ -77,7 +77,6 @@ const Register = () => {
                   />
                 </li>
               </ul>
-              {/* {renderErrorMessage("uname")} */}
             </div>
             <div className="input-container">
               <ul>
@@ -105,7 +104,6 @@ const Register = () => {
                 </li>
                 <li><p className={pass}>Passwords are not the same</p></li>
               </ul>
-              {/* {renderErrorMessage("pass")} */}
             </div>
             <div className="button-container">
               <ul>

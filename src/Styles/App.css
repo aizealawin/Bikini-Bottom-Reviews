@@ -45,10 +45,6 @@ nav {
   background-color: salmon;
 }
 
-nav:hover {
-  
-}
-
 #sign-out {
   margin: 15px;
   font-size: 22px;
@@ -155,14 +151,12 @@ nav:hover {
   justify-content: center;
   border-radius: 10px;
   border-width: 2px;
-  /* background-color: blue; */
   margin: 10px 40px;
   border-style: solid;
   background-color: rgba(255, 255, 255, 0.4);
 }
 
 .name-pfp{
-  /* background-color: aqua; */
   width: 80%;
   text-align: left;
 }
@@ -250,12 +244,6 @@ nav:hover {
   background-color: rgb(255,255,255,0.4);
 }
 
-.submitEdit{
-
-  
-}
-
-
 .music {
   opacity: 0;
   float: left;
@@ -263,6 +251,7 @@ nav:hover {
 
 .myLeg {
   height: 20px;
+  margin-top: 150px;
 }
 .login-auth {
   color: white;

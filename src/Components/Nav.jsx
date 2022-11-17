@@ -38,19 +38,8 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
 
   return(
 <header className="navBar">
-  {/* <Sound
-    url={blues}
-    playStatus={Sound.status.PLAYING}
-    volume = {7}
-    loop = {true}
-  /> */}
+
   <Link to ="/">
-      {/* <div>
-        <img className="logo" 
-        src="https://media4.giphy.com/media/QUXYcgCwvCm4cKcrI3/giphy.gif"
-        alt="welcome banner"
-        />
-      </div> */}
     </Link>
       {authenticated && user ? authenticatedOptions : openOptions}
       <div className='music'>
@@ -59,7 +48,7 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
     <Sound
       url={grass}
       playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
-      volume = {40}
+      volume = {10}
       loop = {true}
     />
 
