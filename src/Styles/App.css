@@ -8,18 +8,32 @@
   justify-content: space-around;
   font-size: 25px;
 }
-
+#logo {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  border: solid 10px white; 
+  box-shadow: 5px 5px 20px 5px #000;
+  border-radius: 10%;
+  background-color: salmon;
+} 
 .container-grid > .a > img {
   height: 100px;
 }
-
-img {
+#krusty-krab {
   width: 275px;
   height: 275px;
   border: solid 10px white; 
   border-radius: 10%;
   box-shadow: 5px 5px 20px 5px #000;
 }
+#restaurant-card {
+  width: 275px;
+  height: 275px;
+  border: solid 10px white; 
+  border-radius: 10%;
+  box-shadow: 5px 5px 20px 5px #000;
+} 
 
 nav {
   display: flex;

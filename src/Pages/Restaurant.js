@@ -110,12 +110,12 @@ const Restaurant = ({ user, authenticated }) => {
       {restaurants.map((res) => {
         return (
           <div className="image" key={res.id}>
-            <img src={res.image} alt={res.name} />
+            <img id="krusty-krab" src={res.image} alt={res.name} />
             <h1>{res.name}</h1>
             <div className="menu">
               <h3>Menu</h3>
 
-              <img src={res.menu} className="menu-details" />
+              <img id="krusty-krab" src={res.menu} className="menu-details" />
             </div>
             <div className="reviews">
               <h3>Reviews</h3>
