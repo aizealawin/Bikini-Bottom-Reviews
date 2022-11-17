@@ -12,11 +12,12 @@
   font-size: 25px;
 }
 #logo {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
+  margin: 10px;
   justify-content: right;
   background-size: cover;
-  border: solid 10px white; 
+  border: solid 6px white; 
   border-radius: 10%;
   background-color: salmon;
 } 
@@ -46,6 +47,11 @@ nav {
 
 nav:hover {
   
+}
+
+#sign-out {
+  margin: 15px;
+  font-size: 22px;
 }
 
 .homepage {
@@ -103,7 +109,13 @@ nav:hover {
 .menu-details{
   opacity: 0%;
   background-color: black;
+<<<<<<< HEAD
   padding: 10px;
+=======
+  color: white;
+  text-align: left;
+  width: 420px;
+>>>>>>> 4b6a2f33849e8666a91772099f40f1ab69f001c6
   position: absolute;
   z-index: 2;
 }
@@ -111,6 +123,7 @@ nav:hover {
 .menu:hover{
   background-color: rgb(210,43,43,1);
   transition-duration: 1s;
+  padding: 100px;
 }
 .menu:hover > .menu-details{
   opacity: 100%;
@@ -230,3 +243,10 @@ nav:hover {
 .myLeg {
   height: 20px;
 }
+.login-auth {
+  color: white;
+}
+.reviews {
+  margin-top: 100px;
+}
+
