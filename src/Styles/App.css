@@ -103,28 +103,34 @@ nav:hover {
   display: flex;
   justify-content: center;
   background-color: rgb(210,43,43,0.4);
-  
+  height: 60px;
 }
 
 .menu-details{
   opacity: 0%;
-  display: flex;
   background-color: black;
   color: white;
   text-align: left;
   width: 420px;
   position: absolute;
   z-index: 2;
-  justify-content: center;
 }
 
 .menu:hover{
   background-color: rgb(210,43,43,1);
   transition-duration: 1s;
 }
-.menu:hover .menu-details{
+.menu:hover > .menu-details{
   opacity: 100%;
   transition-duration: 0.5s;
+}
+#krusty-krab-menu {
+  
+  width: 275px;
+  height: 275px;
+  border: solid 10px white; 
+  border-radius: 10%;
+  box-shadow: 5px 5px 20px 5px #000;
 }
 
 .userReview {
