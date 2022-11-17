@@ -17,11 +17,12 @@ html, body{
   font-size: 25px;
 }
 #logo {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 34px;
+  margin: 12px;
   justify-content: right;
   background-size: cover;
-  border: solid 10px white; 
+  border: solid 5px white; 
   border-radius: 10%;
   background-color: salmon;
 } 
@@ -54,7 +55,7 @@ nav {
 }
 
 .homepage {
-  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp6864010.jpg&f=1&nofb=1&ipt=7e4f726c77cb216b8c121c68aa9f392e08425b406dfedb3c33656e4b1f4014ea&ipo=images');
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b297e143-e206-4a8f-8b5c-59dbc26a99d5/ddtdlgv-48ac2b91-bab5-41fe-a2ca-7b80cc57c92d.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IyOTdlMTQzLWUyMDYtNGE4Zi04YjVjLTU5ZGJjMjZhOTlkNVwvZGR0ZGxndi00OGFjMmI5MS1iYWI1LTQxZmUtYTJjYS03YjgwY2M1N2M5MmQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.mrMOlioaOnl4YVoeaOz9lzHDZFxzZxF_oBI6Eu4_rLs');
   background-color: #89CFF0;
   background-size: cover;
   background-position: center;
