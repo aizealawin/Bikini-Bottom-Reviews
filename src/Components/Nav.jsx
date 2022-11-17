@@ -35,6 +35,7 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
 )
 
   const  [isPlaying, setIsPlaying] = useState(false);
+  window.soundManager.setup({debugMode: false});
 
   return(
 <header className="navBar">
