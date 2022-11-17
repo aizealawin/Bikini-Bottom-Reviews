@@ -47,7 +47,7 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
       <button onClick={() => setIsPlaying(!isPlaying)}>{!isPlaying ? 'Play' : 'Stop'}</button>
       </div>
     <Sound
-      url={grass}
+      url={blues}
       playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
       volume = {10}
       loop = {true}
