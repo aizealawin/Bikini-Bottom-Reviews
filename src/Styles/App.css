@@ -12,11 +12,12 @@
   font-size: 25px;
 }
 #logo {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
+  margin: 10px;
   justify-content: right;
   background-size: cover;
-  border: solid 10px white; 
+  border: solid 6px white; 
   border-radius: 10%;
   background-color: salmon;
 } 
@@ -46,6 +47,11 @@ nav {
 
 nav:hover {
   
+}
+
+#sign-out {
+  margin: 15px;
+  font-size: 22px;
 }
 
 .homepage {
