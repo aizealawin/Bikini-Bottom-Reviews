@@ -9,7 +9,7 @@ const Register = () => {
     email: '',
     profilePic: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: 1234
   }
   const [formValues, setFormValues] = useState(initialFormValues)
 
@@ -91,7 +91,7 @@ const Register = () => {
                     type="password"
                     onChange={handleChange}
                     placeholder="password"
-                    name="password"
+                    name="confirmPassword"
                     required
                   />
                 </li>

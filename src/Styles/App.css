@@ -121,7 +121,6 @@ nav:hover {
 .menu:hover{
   background-color: rgb(210,43,43,1);
   transition-duration: 1s;
-  padding: 100px;
 }
 .menu:hover .menu-details{
   opacity: 100%;
@@ -237,6 +236,7 @@ nav:hover {
   color: white;
 }
 .reviews {
-  margin-top: 100px;
+  margin-top: 200px;
+
 }
 
