@@ -108,6 +108,7 @@ nav:hover {
 
 .menu-details{
   opacity: 0%;
+  display: none;
   background-color: black;
   color: white;
   text-align: left;
@@ -119,10 +120,25 @@ nav:hover {
 .menu:hover{
   background-color: rgb(210,43,43,1);
   transition-duration: 1s;
+  padding: 100px;
 }
-.menu:hover > .menu-details{
+
+.menuTitle {
+  height: max-content;
+}
+
+.menuTitle {
+  height: max-content;
+}
+
+.menu:hover .menu-details{
   opacity: 100%;
   transition-duration: 0.5s;
+  display: flex;
+}
+
+.menu:hover ~ .reviews{
+  margin-top: 160px;
 }
 #krusty-krab-menu {
   
@@ -200,6 +216,16 @@ nav:hover {
   padding: 2px;
 }
 
+#register-img {
+  background-image: url('https://i0.wp.com/www.society19.com/wp-content/uploads/2017/06/spongebobepisodes.jpg?fit=800%2C492&ssl=1');
+  background-size: cover; 
+  height: 100vh;
+  object-fit: fill;
+  margin: 0;
+  padding: 35px;
+  
+}
+
 .reviewArea{
   background-color: rgb(210,43,43,0);
   border: none;
@@ -242,7 +268,6 @@ nav:hover {
   color: white;
 }
 .reviews {
-  margin-top: 200px;
-
+  margin-top: 10px;
 }
 
