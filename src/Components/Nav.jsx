@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Sound from 'react-sound'
 import blues from '../music/blues.mp3'
 import grass from '../music/grass.mp3'
+import { useState } from 'react'
 
 const Nav = ({ authenticated, user, handleLogOut}) => {
   let authenticatedOptions
@@ -23,6 +24,7 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
       <Link to="/">
     <h3>Home</h3>
       </Link>
+
       <Link to="/login">
     <h3>Login</h3>
       </Link>
@@ -32,14 +34,10 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
   </nav>
 )
 
+  const  [isPlaying, setIsPlaying] = useState(false);
+
   return(
 <header className="navBar">
-  <Sound
-    url={grass}
-    playStatus={Sound.status.PLAYING}
-    volume = {7}
-    loop = {true}
-  />
   <Link to ="/">
       {/* <div>
         <img className="logo" 
@@ -49,6 +47,16 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
       </div> */}
     </Link>
       {authenticated && user ? authenticatedOptions : openOptions}
+      <div className='music'>
+      <button onClick={() => setIsPlaying(!isPlaying)}>{!isPlaying ? 'Play' : 'Stop'}</button>
+      </div>
+    <Sound
+      url={grass}
+      playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
+      volume = {40}
+      loop = {true}
+    />
+
     </header>
   )
 }
