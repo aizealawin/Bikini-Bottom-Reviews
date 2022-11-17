@@ -199,7 +199,14 @@ const Restaurant = ({ user, authenticated }) => {
                             </div>
                           </div>
                         ) : (
-                          <h2></h2>
+                          <div className="userReview" key={res.id}>
+                            <img src={users[i].profilePic} className="pfp" />
+                            <div className="name-pfp">
+                              <h5>{users[i].username}</h5>
+                              <p>{res.rating} Star</p>
+                              <p>{res.content}</p>
+                            </div>
+                          </div>
                         )
                       }
                     }
