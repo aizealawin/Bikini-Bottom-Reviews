@@ -109,13 +109,9 @@ nav:hover {
 .menu-details{
   opacity: 0%;
   background-color: black;
-<<<<<<< HEAD
-  padding: 10px;
-=======
   color: white;
   text-align: left;
   width: 420px;
->>>>>>> 4b6a2f33849e8666a91772099f40f1ab69f001c6
   position: absolute;
   z-index: 2;
 }
