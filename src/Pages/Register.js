@@ -29,72 +29,86 @@ const Register = () => {
     navigate('/login')
   }
   return (
-    <div className="register-form">
-      <h1>Register to create account</h1>
-      <div className="form">
-        <form className="register" onSubmit={handleSubmit}>
-          <div className="input-container">
-            <ul>
-            <li><label>Email: </label>
-            <input
-              type="text"
-              name="email"
-              onChange={handleChange}
-              value={formValues.email}
-              placeholder="email"
-              required
-            ></input></li>
-            <li><label>Username: </label>
-            <input
-              type="text"
-              onChange={handleChange}
-              value={formValues.username}
-              placeholder="username"
-              name="username"
-              required
-            /></li>
-            <li><label>Picture: </label>
-            <input
-              type="text"
-              onChange={handleChange}
-              value={formValues.profilePic}
-              placeholder="image-url"
-              name="profilePic"
-              required
-            /></li></ul>
-            {/* {renderErrorMessage("uname")} */}
-          </div>
-          <div className="input-container">
-            <ul>
-            <li><label>Password: </label>
-            <input
-              type="password"
-              onChange={handleChange}
-              value={formValues.password}
-              placeholder="password"
-              name="password"
-              required
-            /></li>
-            <li><label>Confirm Password: </label>
-            <input
-              type="password"
-              onChange={handleChange}
-              value={formValues.password}
-              placeholder="password"
-              name="password"
-              required
-            /></li></ul>
-            {/* {renderErrorMessage("pass")} */}
-          </div>
-          <div className="button-container">
-            <ul>
-            <input
-              type="submit"
-              disabled={!formValues.email || !formValues.password}
-            />
-            </ul>
-          </div>
-        </form>
+    <div id="register-img">
+      <div className="register-form">
+        <h1>Register to create account</h1>
+        <div className="form">
+          <form className="register" onSubmit={handleSubmit}>
+            <div className="input-container">
+              <ul>
+                <li>
+                  <label>Email: </label>
+                  <input
+                    type="text"
+                    name="email"
+                    onChange={handleChange}
+                    value={formValues.email}
+                    placeholder="email"
+                    required
+                  ></input>
+                </li>
+                <li>
+                  <label>Username: </label>
+                  <input
+                    type="text"
+                    onChange={handleChange}
+                    value={formValues.username}
+                    placeholder="username"
+                    name="username"
+                    required
+                  />
+                </li>
+                <li>
+                  <label>Picture: </label>
+                  <input
+                    type="text"
+                    onChange={handleChange}
+                    value={formValues.profilePic}
+                    placeholder="image-url"
+                    name="profilePic"
+                    required
+                  />
+                </li>
+              </ul>
+              {/* {renderErrorMessage("uname")} */}
+            </div>
+            <div className="input-container">
+              <ul>
+                <li>
+                  <label>Password: </label>
+                  <input
+                    type="password"
+                    onChange={handleChange}
+                    value={formValues.password}
+                    placeholder="password"
+                    name="password"
+                    required
+                  />
+                </li>
+                <li>
+                  <label>Confirm Password: </label>
+                  <input
+                    type="password"
+                    onChange={handleChange}
+                    value={formValues.password}
+                    placeholder="password"
+                    name="password"
+                    required
+                  />
+                </li>
+              </ul>
+              {/* {renderErrorMessage("pass")} */}
+            </div>
+            <div className="button-container">
+              <ul>
+                <input
+                  type="submit"
+                  disabled={!formValues.email || !formValues.password}
+                />
+              </ul>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   )

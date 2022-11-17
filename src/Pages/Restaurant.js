@@ -114,11 +114,7 @@ const Restaurant = ({ user, authenticated }) => {
             <h1>{res.name}</h1>
             <div className="menu">
               <h3>Menu</h3>
-              <img
-                id="krusty-krab-menu"
-                src={res.menu}
-                className="menu-details"
-              />
+              <img id="krusty-krab" src={res.menu} className="menu-details" />
             </div>
             <div className="reviews">
               <h3>Reviews</h3>
@@ -149,6 +145,11 @@ const Restaurant = ({ user, authenticated }) => {
                 <button onClick={handleSubmit}>Submit</button>
               </div>
               <div className="mappedReviews">
+                {user && authenticated ? (
+                  <h2></h2>
+                ) : (
+                  <h2 className="login-auth">login to leave review</h2>
+                )}
                 {reviews.map((res) => {
                   for (let i = 0; i < users.length; i++) {
                     if (users[i]?.id === res?.userId) {
@@ -202,7 +203,14 @@ const Restaurant = ({ user, authenticated }) => {
                             </div>
                           </div>
                         ) : (
-                          <h2></h2>
+                          <div className="userReview" key={res.id}>
+                            <img src={users[i].profilePic} className="pfp" />
+                            <div className="name-pfp">
+                              <h5>{users[i].username}</h5>
+                              <p>{res.rating} Star</p>
+                              <p>{res.content}</p>
+                            </div>
+                          </div>
                         )
                       }
                     }
