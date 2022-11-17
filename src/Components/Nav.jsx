@@ -38,12 +38,12 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
 
   return(
 <header className="navBar">
-  <Sound
+  {/* <Sound
     url={blues}
     playStatus={Sound.status.PLAYING}
     volume = {7}
     loop = {true}
-  />
+  /> */}
   <Link to ="/">
       {/* <div>
         <img className="logo" 
