@@ -220,4 +220,13 @@ nav:hover {
   opacity: 0;
   float: left;
 }
+#register-img {
+  background-image: url('https://i0.wp.com/www.society19.com/wp-content/uploads/2017/06/spongebobepisodes.jpg?fit=800%2C492&ssl=1');
+  background-size: cover; 
+  height: 100vh;
+  object-fit: fill;
+  margin: 0;
+  padding: 35px;
+  
+}
 
