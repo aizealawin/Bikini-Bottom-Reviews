@@ -3,7 +3,7 @@ import React from 'react'
 const RestaurantCard = ({name, image}) => {
   return (
     <div>
-      <img src={image}/>
+      <img id='restaurant-card'src={image}/>
       <h5>{name}</h5>
     </div>
   )
