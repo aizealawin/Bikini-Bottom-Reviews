@@ -267,6 +267,8 @@ nav {
 .wrong {
   color: red;
 }
-#res-name {
+
+a{
+  text-decoration: none;
   color: white;
 }

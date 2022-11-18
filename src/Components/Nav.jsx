@@ -37,7 +37,6 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
 
   return(
 <header className="navBar">
-
   <Link to ="/">
     </Link>
       {authenticated && user ? authenticatedOptions : openOptions}
