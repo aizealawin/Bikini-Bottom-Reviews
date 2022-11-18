@@ -111,13 +111,15 @@ const Restaurant = ({ user, authenticated }) => {
         return (
           <div className="image" key={res.id}>
             <img id="krusty-krab" src={res.image} alt={res.name} />
-            <h1>{res.name}</h1>
+            <h1 id="res-name">{res.name}</h1>
             <div className="menu">
-              <div className='menuTitle'><h3>Menu</h3></div>
+              <div className="menuTitle">
+                <h3>Menu</h3>
+              </div>
               <img id="krusty-krab" src={res.menu} className="menu-details" />
             </div>
             <div className="reviews">
-              <h2 className='reviewsTitle'>Reviews</h2>
+              <h2 className="reviewsTitle">Reviews</h2>
               <div className="addReview">
                 <h4>Add Review:</h4>
                 <input

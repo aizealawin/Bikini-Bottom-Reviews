@@ -21,9 +21,7 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
 
   const openOptions = (
   <nav className="navBar">
-      <Link to="/">
-    <h3>Home</h3>
-      </Link>
+      <Link to="/"><img id='logo'src='https://m.media-amazon.com/images/I/31aIFBPXUCL._AC_SY580_.jpg' /></Link>
 
       <Link to="/login">
     <h3>Login</h3>
