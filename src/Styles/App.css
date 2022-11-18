@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Space Grotesk';
 }
 
 .container-grid {
@@ -9,11 +12,12 @@
   font-size: 25px;
 }
 #logo {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
+  margin: 10px;
   justify-content: right;
   background-size: cover;
-  border: solid 10px white; 
+  border: solid 6px white; 
   border-radius: 10%;
   background-color: salmon;
 } 
@@ -41,12 +45,13 @@ nav {
   background-color: salmon;
 }
 
-nav:hover {
-  
+#sign-out {
+  margin: 15px;
+  font-size: 22px;
 }
 
 .homepage {
-  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp6864010.jpg&f=1&nofb=1&ipt=7e4f726c77cb216b8c121c68aa9f392e08425b406dfedb3c33656e4b1f4014ea&ipo=images');
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b297e143-e206-4a8f-8b5c-59dbc26a99d5/ddtdlgv-48ac2b91-bab5-41fe-a2ca-7b80cc57c92d.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IyOTdlMTQzLWUyMDYtNGE4Zi04YjVjLTU5ZGJjMjZhOTlkNVwvZGR0ZGxndi00OGFjMmI5MS1iYWI1LTQxZmUtYTJjYS03YjgwY2M1N2M5MmQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.mrMOlioaOnl4YVoeaOz9lzHDZFxzZxF_oBI6Eu4_rLs');
   background-color: #89CFF0;
   height: 100vh;
   object-fit: fill;
@@ -86,7 +91,7 @@ nav:hover {
   object-fit: fill;
   margin: 0;
   padding: 10px;
-  height: 100vh;
+  height: 100%;
 
 }
 
@@ -94,29 +99,50 @@ nav:hover {
   display: flex;
   justify-content: center;
   background-color: rgb(210,43,43,0.4);
-  
+  height: 60px;
 }
 
 .menu-details{
   opacity: 0%;
-  display: flex;
+  display: none;
   background-color: black;
   color: white;
   text-align: left;
-  padding: 10px;
   width: 420px;
   position: absolute;
   z-index: 2;
-  justify-content: center;
 }
 
 .menu:hover{
   background-color: rgb(210,43,43,1);
   transition-duration: 1s;
+  padding: 100px;
 }
+
+.menuTitle {
+  height: max-content;
+}
+
+.menuTitle {
+  height: max-content;
+}
+
 .menu:hover .menu-details{
   opacity: 100%;
   transition-duration: 0.5s;
+  display: flex;
+}
+
+.menu:hover ~ .reviews{
+  margin-top: 160px;
+}
+#krusty-krab-menu {
+  
+  width: 275px;
+  height: 275px;
+  border: solid 10px white; 
+  border-radius: 10%;
+  box-shadow: 5px 5px 20px 5px #000;
 }
 
 .userReview {
@@ -125,14 +151,12 @@ nav:hover {
   justify-content: center;
   border-radius: 10px;
   border-width: 2px;
-  /* background-color: blue; */
   margin: 10px 40px;
   border-style: solid;
   background-color: rgba(255, 255, 255, 0.4);
 }
 
 .name-pfp{
-  /* background-color: aqua; */
   width: 80%;
   text-align: left;
 }
@@ -186,10 +210,20 @@ nav:hover {
   padding: 2px;
 }
 
+#register-img {
+  background-image: url('https://i0.wp.com/www.society19.com/wp-content/uploads/2017/06/spongebobepisodes.jpg?fit=800%2C492&ssl=1');
+  background-size: cover; 
+  height: 84vh;
+  object-fit: fill;
+  margin: 0;
+  padding: 35px;
+  
+}
+
 .reviewArea{
   background-color: rgb(210,43,43,0);
   border: none;
-  font-family: helvetica;
+  font-family: 'Space Grotesk';
   resize: none;
   text-decoration: none;
   outline: none;
@@ -210,14 +244,29 @@ nav:hover {
   background-color: rgb(255,255,255,0.4);
 }
 
-.submitEdit{
-
-  
-}
-
-
 .music {
   opacity: 0;
   float: left;
 }
 
+.myLeg {
+  height: 20px;
+  margin-top: 150px;
+}
+.login-auth {
+  color: white;
+}
+.reviews {
+  margin-top: 10px;
+}
+
+.right {
+  display: none;
+}
+
+.wrong {
+  color: red;
+}
+#res-name {
+  color: white;
+}

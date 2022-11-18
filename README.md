@@ -1,7 +1,5 @@
 # Bikini Bottom Restaurant Reviews
 
-<!-- ![](https://) -->
-
 ## Date: 11/10/2022
 
 ### By:
@@ -16,11 +14,19 @@
 
 ---
 
+### **_Bikini Bottom Reviews_**
+
+![scrennshot 1](/images/Screen%20Shot%202022-11-17%20at%207.44.53%20PM.png 'homepage')
+![scrennshot 2](/images/Screen%20Shot%202022-11-17%20at%208.02.07%20PM.png 'menu')
+![scrennshot 3](/images/Screen%20Shot%202022-11-17%20at%208.04.39%20PM.png 'register')
+
+---
+
 ### **_Resources_**
 
 [Backend Repo](https://github.com/thomalita/bikini-bottom-reviews)
 
-[Deployed Site](https://google.com)
+[Deployed Site](https://bikini-bottom-yelp.herokuapp.com/)
 
 ---
 
@@ -34,23 +40,43 @@ This site is focused around reviewing the direct menu items from a restaurant, a
 
 ### **_Technologies Used_**
 
+- HTML
+- CSS
+- JavaScript
+
 #### Pern Stack
 
 - React
-- HTML
 - Node.js
-- JavaScript
-- CSS
+- SQL
+
+---
 
 #### **_Component Heirarchy Diagram:_**
 
 ![Component Heirarchy Diagram](https://i.imgur.com/kQuoIKD.jpeg 'Component Heirarchy Diagram')
+
+---
 
 ### **_Planning_**
 
 #### [Bikini Bottom Reviews Trello Board](https://trello.com/b/Q1r3U2MG/gp3-foodie-review)
 
 #### [Pitch Deck](https://docs.google.com/presentation/d/1UVWUNiWccwSNQ4Vs323jw1rcyUkn_TYMRM0NY0Mq9P0/edit?usp=sharing)
+
+---
+
+### **_Future Updates_**
+
+- Mobile Friendly
+
+---
+
+### **_Known Bugs_**
+
+- Menu glitches when hovered over the bottom
+
+---
 
 ### **_License_**
 

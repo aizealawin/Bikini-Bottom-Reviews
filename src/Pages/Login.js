@@ -33,7 +33,6 @@ const Login = ({ setUser, toggleAuthenticated }) => {
                   name="email"
                   required
                 />
-                {/* {renderErrorMessage("uname")} */}
               </div>
               <div className="input-container">
                 <label>Password </label>
@@ -43,7 +42,6 @@ const Login = ({ setUser, toggleAuthenticated }) => {
                   name="password"
                   required
                 />
-                {/* {renderErrorMessage("pass")} */}
               </div>
               <div className="button-container">
                 <input type="submit" />

@@ -12,7 +12,7 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
       <nav className="navBar">
         <h2>Welcome {user?.email}!</h2>
         <Link to="/"><div><img id='logo'src='https://m.media-amazon.com/images/I/31aIFBPXUCL._AC_SY580_.jpg' /></div></Link>
-        <Link onClick={handleLogOut} to="/">
+        <Link id="sign-out" onClick={handleLogOut} to="/">
           Sign Out
         </Link>
       </nav>
@@ -21,9 +21,7 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
 
   const openOptions = (
   <nav className="navBar">
-      <Link to="/">
-    <h3>Home</h3>
-      </Link>
+      <Link to="/"><img id='logo'src='https://m.media-amazon.com/images/I/31aIFBPXUCL._AC_SY580_.jpg' /></Link>
 
       <Link to="/login">
     <h3>Login</h3>
@@ -35,31 +33,20 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
 )
 
   const  [isPlaying, setIsPlaying] = useState(false);
+  window.soundManager.setup({debugMode: false});
 
   return(
 <header className="navBar">
-  {/* <Sound
-    url={blues}
-    playStatus={Sound.status.PLAYING}
-    volume = {7}
-    loop = {true}
-  /> */}
   <Link to ="/">
-      {/* <div>
-        <img className="logo" 
-        src="https://media4.giphy.com/media/QUXYcgCwvCm4cKcrI3/giphy.gif"
-        alt="welcome banner"
-        />
-      </div> */}
     </Link>
       {authenticated && user ? authenticatedOptions : openOptions}
       <div className='music'>
       <button onClick={() => setIsPlaying(!isPlaying)}>{!isPlaying ? 'Play' : 'Stop'}</button>
       </div>
     <Sound
-      url={grass}
+      url={blues}
       playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
-      volume = {40}
+      volume = {10}
       loop = {true}
     />
 
